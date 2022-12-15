@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --pale-blue: hsl(225, 100%, 94%);
+    --right-blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    --active-states: rgb(144, 114, 227);
+    
+
+    --paragraph-font-size: 15px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+body{
+    /* center .card-container horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: var(--pale-blue);
+
+    font-size: var(--paragraph-font-size);
+    font-family: 'Red Hat Display', arial, sans-serif;
+}
+
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* ****** */
+/* LAYOUT */
+/* ****** */
+.card-container{
+    min-width: 300px;
+    max-width: 320px;
+    background-color: white;
+    box-shadow: 0 12px 14px 0 rgba(0, 0, 0, 0.23);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* img */
+.hero-img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/* contents */
+.card-contents{
+    padding: 2em 1.5em;
+}
+
+.desc{
+    text-align: center;
+    padding: 0 0.9em;
+}
+
+.heading{
+    margin-bottom: 0.5em;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--dark-blue);
+}
+
+.paragraph{
+    margin-bottom: 1em;
+    line-height: 25px;
+    color: var(--desaturated-blue);
+}
+
+/* subscription | annual plan*/
+.subscription-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    background-color: var(--very-pale-blue);
+    border-radius: 10px;
+    padding: 0.9em;
+    margin-bottom: 1em;
+}
+
+.subscription-contents{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.music-icon{
+    object-fit: contain;
+}
+
+.annual-plan{
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.amount{
+    color: var(--desaturated-blue);
+}
+
+.change{
+    text-decoration: underline;
+    color: var(--right-blue);
+
+    transition: 0.3s;
+}
+
+.change:hover{
+    text-decoration: none;
+    color: var(--active-states);
+}
+
+/* order */
+.order{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order a{
+    display: block;
+    text-align: center;
+}
+
+.proceed-payment-cta{
+    background-color: var(--right-blue);
+    box-shadow: 0 12px 14px 0 rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    padding: 1em;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.proceed-payment-cta:hover{
+    background-color: var(--active-states);
+}
+
+.cancel-order{
+    font-weight: 700;
+    color: var(--desaturated-blue);
+
+    transition: 0.3s;
+}
+
+.cancel-order:hover{
+    color: var(--dark-blue);
+}
+
+/* mobile background */
+@media(max-width: 700px){
+    body{
+        background-image: url(../images/pattern-background-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+    }
+}
+
+/* desktop background */
+@media(min-width: 700px){
+    body{
+        background-image: url(../images/pattern-background-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+    }
+}
